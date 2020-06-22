@@ -1,68 +1,98 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Contributor][contributor-shield]][contributor-url]
+[![Issues][issues-shield]][issues-url]
+<br />
 
-## Available Scripts
+<p align="center">
+ 
+  <h3 align="center">Bookstore-redux</h3>
+  <p align="center">
+    React/Redux
+    <br />
+    <a href="https://github.com/bafiam/Bookstore-redux.git"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    ·
+    <a href="https://github.com/bafiam/Bookstore-redux/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/bafiam/Bookstore-redux/issues">Request Feature</a>
+  </p>
+</p>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [About the Project](#about-the-project)
+- [Screenshots](#screenshots)
+- [How to Use](#how-to-Use)
+- [Roadmap](#roadmap)
+- [License](#license)
+- [Contact](#contact)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<!-- ABOUT THE PROJECT -->
 
-### `npm test`
+## About The Project
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project involves building the bookstore using react.
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Npm
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React
 
-### `npm run eject`
+- Redux
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Screenshots
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Work in progress
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### How to Use
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Work in progress
 
-## Learn More
+### Built With
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project was built with react create-react-app
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Getting Started
 
-### Code Splitting
+- git clone https://github.com/bafiam/Bookstore-redux.git
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- cd Bookstore-redux
 
-### Analyzing the Bundle Size
+- run **npm install**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- run **npm start**
 
-### Making a Progressive Web App
+## Live Version
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- You can view the app [Here](https://libstore.herokuapp.com/)
 
-### Advanced Configuration
+<!-- ROADMAP -->
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Roadmap
 
-### Deployment
+See the [open issues](https://github.com/bafiam/Bookstore-redux/issues) for a list of proposed features (and known issues).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+<!-- CONTACT -->
 
-### `npm run build` fails to minify
+## Author
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Stephen Gumba
+
+- [Github profile](https://github.com/bafiam)
+
+MaryAnn Chukwuka
+
+- [Github profile](https://github.com/adaorachi)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributor-shield]: https://img.shields.io/badge/Contributors-1-%2300ff00
+[contributor-url]: https://github.com/bafiam/Bookstore-redux/graphs/contributors
+[issues-shield]: https://img.shields.io/badge/issues-0-%2300ff00
+[issues-url]: https://github.com/bafiam/Bookstore-redux/issues/
