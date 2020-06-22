@@ -10,9 +10,7 @@ const BooksList = props => {
         <Book book={book} key={book.id} />
       );
     })
-  ) : (
-      <div>Oops! No Book in the store!</div>
-    );
+  ) : (<div>Oops! No Book in the store!</div>);
 
   return (
     <div>
