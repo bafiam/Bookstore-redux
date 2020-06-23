@@ -1,36 +1,69 @@
-import React from 'react';
+import React, { Component } from "react";
 
-const BooksForm = () => {
-  const BOOKCATEGORIES = [
-    'Select---',
-    'Action',
-    'Biography',
-    'History',
-    'Horror',
-    'Kids',
-    'Learning',
-    'Sci-Fi',
-  ];
-  const mapCategories = BOOKCATEGORIES.map(bookCat => (
-    <option value={bookCat} key={bookCat}>
-      {bookCat}
-    </option>
-  ));
+class BooksForm extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div>
-      <h3>book form </h3>
+    this.state = {
+      title: "",
+      category: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-      <input type="text" name="title" id="title" placeholder="Book title" />
+  handleChange(e) {
+    e.preventDefault();
+    this.setState({[e.target.name]: e.target.value})
+    
+    
+  }
 
-      <select name="" id="">
-        {mapCategories}
-      </select>
-      <button className="btn" type="submit">
-        Add Book
-      </button>
-    </div>
-  );
-};
+  handleSubmit(e){
+    e.preventDefault();
+    console.log(this.state)
+
+  }
+  
+  render() {
+    const BOOKCATEGORIES = [
+      "Select---",
+      "Action",
+      "Biography",
+      "History",
+      "Horror",
+      "Kids",
+      "Learning",
+      "Sci-Fi",
+    ];
+    const mapCategories = BOOKCATEGORIES.map((bookCat) => (
+      <option value={bookCat} key={bookCat}>
+        {bookCat}
+      </option>
+    ));
+
+    return (
+      <div>
+        <h3>book form </h3>
+        <form onSubmit = {this.handleSubmit}>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Book title"
+            onChange={this.handleChange}
+          />
+
+          <select name="category" id="category" onChange={this.handleChange}>
+            {mapCategories}
+          </select>
+          <button className="btn" type="submit">
+            Add Book
+          </button>
+        </form>
+      </div>
+    );
+  }
+}
 
 export default BooksForm;
