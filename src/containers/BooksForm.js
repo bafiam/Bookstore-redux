@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { connect } from 'react-redux';
+import {CREATE_BOOK} from '../actions/index'
 class BooksForm extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +22,8 @@ class BooksForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    console.log(this.state)
+    this.props.addBook(this.state)
+    e.target.reset()
 
   }
   
@@ -66,4 +68,11 @@ class BooksForm extends Component {
   }
 }
 
-export default BooksForm;
+const mapDispatchToProps = dispatch => {
+  return {
+    addBook: (book) => {
+      dispatch(CREATE_BOOK(book))
+    }
+  };
+};
+export default connect(null, mapDispatchToProps)(BooksForm);
