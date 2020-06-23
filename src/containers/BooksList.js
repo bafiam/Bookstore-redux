@@ -40,15 +40,14 @@ class BooksList extends Component {
       </div>
     );
   }
-
-};
+}
 
 const mapStateToProps = state => ({
   books: state.books,
 });
 
 const mapDispatchToProps = dispatch => ({
-  removeBook: (book) => {
+  removeBook: book => {
     dispatch(DELETE_BOOK(book));
   },
 });
@@ -59,5 +58,7 @@ BooksList.defaultProps = {
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object),
+  removeBook: PropTypes.func.isRequired,
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

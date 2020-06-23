@@ -22,5 +22,7 @@ Book.propTypes = {
     title: PropTypes.string,
     category: PropTypes.string,
   }),
+
+  onClick: PropTypes.func.isRequired,
 };
 export default Book;

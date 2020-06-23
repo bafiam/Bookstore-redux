@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { CREATE_BOOK } from '../actions/index';
 
 class BooksForm extends Component {
@@ -37,7 +38,7 @@ class BooksForm extends Component {
       'Learning',
       'Sci-Fi',
     ];
-    const mapCategories = BOOKCATEGORIES.map((bookCat) => (
+    const mapCategories = BOOKCATEGORIES.map(bookCat => (
       <option value={bookCat} key={bookCat}>
         {bookCat}
       </option>
@@ -67,11 +68,15 @@ class BooksForm extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addBook: (book) => {
-      dispatch(CREATE_BOOK(book));
-    },
-  };
+const mapDispatchToProps = dispatch => ({
+
+  addBook: book => {
+    dispatch(CREATE_BOOK(book));
+  },
+});
+
+BooksForm.propTypes = {
+  addBook: PropTypes.func.isRequired,
 };
+
 export default connect(null, mapDispatchToProps)(BooksForm);
