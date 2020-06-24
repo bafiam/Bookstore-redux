@@ -20,7 +20,7 @@ const Book = ({ book, removeBook }) => {
           </div>
           <div className="col-3">
             <div className="book-progress-bar">
-              <button className="btn btn-primary btn-large" type="button" onClick={() => removeBook(id)}>Remove Book</button>
+              <button className="btn btn-danger btn-large" type="button" onClick={() => removeBook(id)}>Remove Book</button>
             </div>
           </div>
         </div>

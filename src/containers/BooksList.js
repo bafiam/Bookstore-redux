@@ -30,7 +30,7 @@ class BooksList extends Component {
       books.map(book => (
         <Book book={book} key={book.id} removeBook={this.handleRemoveBook} />
       ))
-    ) : (<p>Oops! No Book in the store!</p>);
+    ) : (<p className="alert alert-warning" role="alert">Oops! No Book in the store!</p>);
     return (
       <div className="container">
         <CategoryFilter filterBook={this.handleFilterChange} />

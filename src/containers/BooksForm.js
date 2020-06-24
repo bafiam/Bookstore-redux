@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { CREATE_BOOK } from '../actions/index';
-import { validateForm } from '../utils';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { CREATE_BOOK } from "../actions/index";
+import { validateForm } from "../utils";
 
 class BooksForm extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      title: '',
-      category: '',
+      title: "",
+      category: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,8 +30,8 @@ class BooksForm extends Component {
       addBook(this.state);
       e.target.reset();
       this.setState({
-        title: '',
-        category: '',
+        title: "",
+        category: "",
       });
     } else {
       this.setState({ errors });
@@ -40,49 +40,72 @@ class BooksForm extends Component {
 
   render() {
     const BOOKCATEGORIES = [
-      'Select---',
-      'Action',
-      'Biography',
-      'History',
-      'Horror',
-      'Kids',
-      'Learning',
-      'Sci-Fi',
+      "Action",
+      "Biography",
+      "History",
+      "Horror",
+      "Kids",
+      "Learning",
+      "Sci-Fi",
     ];
-    const mapCategories = BOOKCATEGORIES.map(bookCat => (
+    const mapCategories = BOOKCATEGORIES.map((bookCat) => (
       <option value={bookCat} key={bookCat}>
         {bookCat}
       </option>
     ));
 
     const { errors } = this.state;
+    
+    const anError = errors !== undefined ? errors.map((err) => (
+      <small id="error-msg" className= "alert alert-danger">{err}</small>
+    )) : ('')
+      
     return (
-      <div>
-        <h3>book form </h3>
+      <div className="container border-top py-4">
+        <h4 className="form-title">ADD NEW BOOK</h4>
         <form onSubmit={this.handleSubmit}>
-          <p><small id="error-msg">{errors}</small></p>
-          <input
-            type="text"
-            name="title"
-            id="title"
-            placeholder="Book title"
-            onChange={this.handleChange}
-          />
+          <p className= " d-flex flex-column">
+            {anError}
+          </p>
 
-          <select name="category" id="category" onChange={this.handleChange}>
-            {mapCategories}
-          </select>
-          <button className="btn" type="submit">
-            Add Book
-          </button>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input
+                type="text"
+                class="form-control"
+                name="title"
+                id="title"
+                placeholder="Book title"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div class="form-group col-md-4">
+              <select
+                class="form-control"
+                name="category"
+                id="category"
+                onChange={this.handleChange}
+              >
+                <option disabled selected>
+                  Choose...
+                </option>
+                {mapCategories}
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <button className="btn btn-primary btn-large" type="submit">
+                Add Book
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  addBook: book => {
+const mapDispatchToProps = (dispatch) => ({
+  addBook: (book) => {
     dispatch(CREATE_BOOK(book));
   },
 });
