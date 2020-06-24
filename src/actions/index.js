@@ -11,9 +11,9 @@ const CREATE_BOOK = book => ({
   },
 });
 
-const DELETE_BOOK = book => ({
+const DELETE_BOOK = id => ({
   type: deleteBookType,
-  id: book.id,
+  id,
 });
 
 export {
