@@ -3,7 +3,7 @@ import { filterBookType } from '../actions/index';
 const filterReducer = (state = '', action) => {
   switch (action.type) {
     case filterBookType:
-      return Object.assign('', state, action.category);
+      return action.category;
     default:
       return 'All';
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CategoryFilter = () => {
+const CategoryFilter = ({filterBook}) => {
   const BOOKCATEGORIES = [
     'All',
     'Action',
@@ -18,8 +18,8 @@ const CategoryFilter = () => {
   ));
   return (
     <div>
-      <select>
-        <option disabled="true" selected>Select---</option>
+      <select onChange= {(e) => filterBook(e)}>
+        <option disabled={true} selected>Select---</option>
         {mapCategories}
       </select>
     </div>

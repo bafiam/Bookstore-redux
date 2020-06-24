@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import { DELETE_BOOK } from '../actions/index';
+import { DELETE_BOOK, CHANGE_FILTER  } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
 
 class BooksList extends Component {
@@ -10,6 +10,12 @@ class BooksList extends Component {
     super(props);
 
     this.handleRemoveBook = this.handleRemoveBook.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
+  }
+  handleFilterChange(e) {
+    const { updateFilter } = this.props;
+    updateFilter(e.target.value)
+
   }
 
   handleRemoveBook(book) {
@@ -26,6 +32,7 @@ class BooksList extends Component {
     ) : (<tr><td colSpan="3">Oops! No Book in the store!</td></tr>);
     return (
       <div>
+        <CategoryFilter filterBook = {this.handleFilterChange}/>
         <table>
           <thead>
             <tr>
@@ -38,7 +45,7 @@ class BooksList extends Component {
             {bookList}
           </tbody>
         </table>
-        <CategoryFilter />
+        
       </div>
     );
   }
@@ -46,13 +53,18 @@ class BooksList extends Component {
 
 const mapStateToProps = state => ({
   books: state.books,
+  filter: state.filter
 });
 
 const mapDispatchToProps = dispatch => ({
   removeBook: book => {
     dispatch(DELETE_BOOK(book));
   },
+  updateFilter: category => {
+    dispatch(CHANGE_FILTER (category));
+  }
 });
+
 
 BooksList.defaultProps = {
   books: { id: 1, title: 'Learning Redux', category: 'Learning' },
