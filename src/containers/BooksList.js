@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { DELETE_BOOK } from '../actions/index';
+import CategoryFilter from '../components/CategoryFilter';
 
 class BooksList extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class BooksList extends Component {
     const { books } = this.props;
     const bookList = books.length ? (
       books.map(book => (
-        <Book book={book} key={book.id} onClick={this.handleRemoveBook} />
+        <Book book={book} key={book.id} removeBook={this.handleRemoveBook} />
       ))
     ) : (<tr><td colSpan="3">Oops! No Book in the store!</td></tr>);
     return (
@@ -37,6 +38,7 @@ class BooksList extends Component {
             {bookList}
           </tbody>
         </table>
+        <CategoryFilter />
       </div>
     );
   }

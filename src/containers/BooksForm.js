@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { CREATE_BOOK } from '../actions/index';
+import validateForm from '../utils';
 
 class BooksForm extends Component {
   constructor(props) {
@@ -22,9 +23,19 @@ class BooksForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { addBook } = this.props;
-    addBook(this.state);
-    e.target.reset();
+    const { title, category } = this.state;
+    const errors = validateForm(title, category);
+    if (errors.length <= 0) {
+      const { addBook } = this.props;
+      addBook(this.state);
+      e.target.reset();
+      this.setState({
+        title: '',
+        category: '',
+      });
+    } else {
+      this.setState({ errors });
+    }
   }
 
   render() {
@@ -44,10 +55,12 @@ class BooksForm extends Component {
       </option>
     ));
 
+    const { errors } = this.state;
     return (
       <div>
         <h3>book form </h3>
         <form onSubmit={this.handleSubmit}>
+          <p><small id="error-msg">{errors}</small></p>
           <input
             type="text"
             name="title"
@@ -69,7 +82,6 @@ class BooksForm extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-
   addBook: book => {
     dispatch(CREATE_BOOK(book));
   },
