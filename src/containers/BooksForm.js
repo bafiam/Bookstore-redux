@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { CREATE_BOOK } from '../actions/index';
-import validateForm from '../utils';
+import {validateForm} from '../utils';
 
 class BooksForm extends Component {
   constructor(props) {

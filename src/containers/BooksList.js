@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { DELETE_BOOK, CHANGE_FILTER  } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
+import {filterBook} from '../utils';
 
 class BooksList extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class BooksList extends Component {
     const { updateFilter } = this.props;
     updateFilter(e.target.value)
 
+
   }
 
   handleRemoveBook(book) {
@@ -24,7 +26,8 @@ class BooksList extends Component {
   }
 
   render() {
-    const { books } = this.props;
+    
+    const books = filterBook(this.props)
     const bookList = books.length ? (
       books.map(book => (
         <Book book={book} key={book.id} removeBook={this.handleRemoveBook} />
@@ -76,3 +79,9 @@ BooksList.propTypes = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
+
+// given books
+// if filter is all
+// return all books
+// else
+// return books where books.category === filter
