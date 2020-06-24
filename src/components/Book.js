@@ -5,7 +5,26 @@ const Book = ({ book, removeBook }) => {
   const { id, title, category } = book;
   return (
     <div className="card book my-4">
-
+      <div className="card-body">
+        <div className="row">
+          <div className="col-9">
+            <div className="book-details">
+              <div className="book-category">{category}</div>
+              <div className="book-title">{title}</div>
+              <div className="book-author text-primary">Suzanne Collins</div>
+              <div className="book-id text-primary">
+                #
+                {id}
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="book-progress-bar">
+              <button className="btn btn-primary btn-large" type="button" onClick={() => removeBook(id)}>Remove Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
