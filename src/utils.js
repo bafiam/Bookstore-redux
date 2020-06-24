@@ -8,16 +8,12 @@ const validateForm = (title, category) => {
   }
   return errors;
 };
-const filterBook = (props) => {
-  const {books, filter} = props
-  if (books && filter === "All") {
-    return books
-    
-  } else {
-    return books.filter(book => book.category === filter )
-    
+const filterBook = props => {
+  const { books, filter } = props;
+  if (books && filter === 'All') {
+    return books;
   }
+  return books.filter(book => book.category === filter);
+};
 
-}
-
-export {validateForm, filterBook};
+export { validateForm, filterBook };

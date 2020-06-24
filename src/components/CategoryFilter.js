@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const CategoryFilter = ({filterBook}) => {
+const CategoryFilter = ({ filterBook }) => {
   const BOOKCATEGORIES = [
     'All',
     'Action',
@@ -18,12 +19,16 @@ const CategoryFilter = ({filterBook}) => {
   ));
   return (
     <div>
-      <select onChange= {(e) => filterBook(e)}>
-        <option disabled={true} selected>Select---</option>
+      <select onChange={e => filterBook(e)}>
+        <option disabled selected>Select---</option>
         {mapCategories}
       </select>
     </div>
   );
+};
+
+CategoryFilter.propTypes = {
+  filterBook: PropTypes.func.isRequired,
 };
 
 export default CategoryFilter;
