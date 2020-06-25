@@ -8,11 +8,13 @@ const validateForm = (title, category) => {
   }
   return errors;
 };
+
 const filterBook = props => {
   const { books, filter } = props;
   if (books && filter === 'All') {
     return books;
   }
+
   return books.filter(book => book.category === filter);
 };
 

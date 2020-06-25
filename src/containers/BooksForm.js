@@ -94,7 +94,7 @@ class BooksForm extends Component {
                 onChange={this.handleChange}
               >
                 <option disabled selected>
-                  Choose...
+                  Category...
                 </option>
                 {mapCategories}
               </select>
