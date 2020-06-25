@@ -28,13 +28,13 @@ class BooksList extends Component {
     const books = filterBook(this.props);
     const bookList = books.length ? (
       books.map(book => (
-       <Book book={book} key={book.id} removeBook={this.handleRemoveBook} />
+        <Book book={book} key={book.id} removeBook={this.handleRemoveBook} />
       ))
     ) : (<p className="alert alert-warning" role="alert">Oops! No Book in the store!</p>);
     return (
       <div className="container">
         <CategoryFilter filterBook={this.handleFilterChange} />
-        <div className="book-list"> 
+        <div className="book-list">
           {bookList}
         </div>
       </div>
