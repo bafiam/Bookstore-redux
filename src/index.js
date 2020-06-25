@@ -34,6 +34,7 @@ const initialState = [
 
 const store = createStore(rootReducer, {
   books: initialState,
+  filter: 'All',
 });
 
 ReactDOM.render(
