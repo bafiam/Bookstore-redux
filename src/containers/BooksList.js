@@ -30,22 +30,13 @@ class BooksList extends Component {
       books.map(book => (
         <Book book={book} key={book.id} removeBook={this.handleRemoveBook} />
       ))
-    ) : (<tr><td colSpan="3">Oops! No Book in the store!</td></tr>);
+    ) : (<p className="alert alert-warning" role="alert">Oops! No Book in the store!</p>);
     return (
-      <div>
+      <div className="container">
         <CategoryFilter filterBook={this.handleFilterChange} />
-        <table>
-          <thead>
-            <tr>
-              <th>Book ID</th>
-              <th>Title</th>
-              <th>Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            {bookList}
-          </tbody>
-        </table>
+        <div className="book-list">
+          {bookList}
+        </div>
       </div>
     );
   }

@@ -40,7 +40,6 @@ class BooksForm extends Component {
 
   render() {
     const BOOKCATEGORIES = [
-      'Select---',
       'Action',
       'Biography',
       'History',
@@ -56,25 +55,56 @@ class BooksForm extends Component {
     ));
 
     const { errors } = this.state;
-    return (
-      <div>
-        <h3>book form </h3>
-        <form onSubmit={this.handleSubmit}>
-          <p><small id="error-msg">{errors}</small></p>
-          <input
-            type="text"
-            name="title"
-            id="title"
-            placeholder="Book title"
-            onChange={this.handleChange}
-          />
 
-          <select name="category" id="category" onChange={this.handleChange}>
-            {mapCategories}
-          </select>
-          <button className="btn" type="submit">
-            Add Book
-          </button>
+    const anError = errors !== undefined ? errors.map(err => (
+      <small
+        id="error-msg"
+        className="alert alert-danger"
+        key={err}
+      >
+        {err}
+
+      </small>
+    )) : ('');
+
+    return (
+      <div className="container border-top py-4">
+        <h4 className="form-title">ADD NEW BOOK</h4>
+        <form onSubmit={this.handleSubmit}>
+          <p className=" d-flex flex-column">
+            {anError}
+          </p>
+
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <input
+                type="text"
+                className="form-control"
+                name="title"
+                id="title"
+                placeholder="Book title"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-group col-md-4">
+              <select
+                className="form-control"
+                name="category"
+                id="category"
+                onChange={this.handleChange}
+              >
+                <option disabled selected>
+                  Category...
+                </option>
+                {mapCategories}
+              </select>
+            </div>
+            <div className="form-group col-md-2">
+              <button className="btn btn-primary btn-large" type="submit">
+                Add Book
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     );

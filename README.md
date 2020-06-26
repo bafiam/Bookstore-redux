@@ -3,8 +3,7 @@
 <br />
 
 <p align="center">
- 
-  <h3 align="center">Bookstore-redux</h3>
+  <h1 align="center">Bookstore-App - LibStore</h1>
   <p align="center">
     React/Redux
     <br />
@@ -24,52 +23,83 @@
 
 - [About the Project](#about-the-project)
 - [Screenshots](#screenshots)
-- [How to Use](#how-to-Use)
+- [Prerequisites Installations](#prerequisites-installations)
+- [Technology used](#technology-used)
+- [Usage/Getting Started](#how-to-Use)
+- [Live Version](#live-version)
 - [Roadmap](#roadmap)
 - [License](#license)
-- [Contact](#contact)
+- [Authors](#authors)
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-This project involves building the bookstore using react.
+This project is a BookStore App built with React and Redux. It implements the functionality of building components in React and connecting the components to fetch date from the Redux store using Redux actions, reducers and methods. 
 
-### Prerequisites
+In this project, the complete feature of the app renders the following:
+- A list of books with their details.
+- Each book component has a button to delete a book from the book store.
+- A form to add books to the list.
+- A filter button to filter the book categories.
 
-- Node
-
-- Npm
-
-- React
-
-- Redux
 
 ## Screenshots
 
-Work in progress
+<img src="public/images/screenshot1.png" alt="screenshot1"/>
 
-### How to Use
 
-Work in progress
+## Prerequisites Installations
 
-### Built With
+<p>If you want a copy of this project running on your machine you have to install:</p>
 
-This project was built with react create-react-app
+* <a href="https://nodejs.org/en/">Node.js (v5. 2.0 or greater)</a>
+* <a href="https://git-scm.com/downloads">Git version control system</a>
 
-## Getting Started
+## Technology used
+- Node.js
+- React
+- React-DOM
+- React-Create-App
+- Redux
+- npm
+- CSS
+- ES6
 
-- git clone https://github.com/bafiam/Bookstore-redux.git
 
-- cd Bookstore-redux
+## Usage/Getting Started
 
-- run **npm install**
+Once you have installed the required package shown on the [Prerequisites Installations](#required-installations), proceed with the following steps
 
-- run **npm start**
+Clone the Repository,
+
+```Shell
+your@pc:~$ git clone https://github.com/bafiam/Bookstore-redux
+```
+
+Move into the cloned folder
+
+```Shell
+your@pc:~$ cd Bookstore-redux
+```
+
+Get the dependencies needed for the app
+
+```Shell
+your@pc:~$ npm install
+```
+
+Start the server and use the app
+
+```Shell
+your@pc:~$ npm run start
+```
 
 ## Live Version
 
-- You can view the app [Here](https://libstore.herokuapp.com/)
+This is the link to the live preview in Heroku. Feel free to visit.<br>
+[LibStore - BookStore Web App](https://libstore.herokuapp.com/)<br>
+
 
 <!-- ROADMAP -->
 
@@ -79,7 +109,7 @@ See the [open issues](https://github.com/bafiam/Bookstore-redux/issues) for a li
 
 <!-- CONTACT -->
 
-## Author
+## Authors
 
 Stephen Gumba
 
