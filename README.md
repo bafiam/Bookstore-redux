@@ -35,7 +35,7 @@
 
 ## About The Project
 
-This project is a BookStore App built with React and Redux. It implements the functionality of building components in React and connecting the components to fetch date from the Redux store using Redux actions, reducers and methods. 
+This project is a BookStore App built with React and Redux. It implements the functionality of building components in React and connecting the components to fetch date from the Redux store using Redux actions, reducers, and methods. 
 
 In this project, the complete feature of the app renders the following:
 - A list of books with their details.
